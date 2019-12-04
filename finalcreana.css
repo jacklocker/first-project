@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+}
+body , html{
+    width: 100%;
+    height: 100%;   
+}
+.fixedHead{
+    width: 100%;
+    height: 100px;
+    background-color: cadetblue;
+}
+.inputBox{
+    height: 100%; 
+    float: left; 
+    margin-left: 20%;
+}
+.inputArea{
+    width: 700px;
+    height: 30%; 
+    margin-top: 30px;
+}
+#demo{
+    width: 100%;
+    height: 100%;
+    background-color: khaki;
+    position: relative;   
+}
+
+.toggel{
+    float: left ; 
+    position: relative; 
+    width: 250; 
+    height: 20px;
+}
+.editbtnform{
+    float: left ; 
+    position: relative; 
+    width: 125; 
+    height: 20px;
+}
+.removebtn{
+    float: left ; 
+    position: relative; 
+    width: 125; 
+    height: 20px;
+}
+.side{
+    float: left ; 
+    position: relative; 
+    width: 100; 
+    height: 170px;
+    background-color: cadetblue;
+    text-align: center;
+    line-height: 02.6;
+}
+.fnameBox{
+    float: left ; 
+    position: relative; 
+    width: 150; 
+    height: 42px;
+    background-color: crimson;
+    text-align: center;
+    line-height: 2.5;
+}
+.lnameBox{
+    float: left ; 
+    position: relative; 
+    width: 150; 
+    height: 42px;
+    background-color: rgb(77, 19, 31);
+    text-align: center;
+    line-height: 2.5;
+}
+.dobBox{
+    float: left ; 
+    position: relative; 
+    width: 150; 
+    height: 42px;
+    background-color: rgb(20, 220, 187);
+    text-align: center;
+    line-height: 2.5;
+}
+.ageBox{
+    float: left ; 
+    position: relative; 
+    width: 150; 
+    height: 44px;
+    background-color: rgb(98, 8, 110);
+    text-align: center;
+    line-height: 2.5;
+}
+div[id^=col-] input{
+    width: 135px;
+    margin-top: 10px;
+}
+.editButton{
+    width: 30px; 
+    height: 20px; 
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+}
