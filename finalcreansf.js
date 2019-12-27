@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     /* make main array*/
     if (localStorage.getItem('testObject') == null) {
-        var main = [];
-    }
+        var main = [];       
+        }
     else {
         main = JSON.parse(localStorage.getItem('testObject'));
     }
@@ -128,7 +128,31 @@ $(document).ready(function () {
         updateMainarray();
         $("#third").trigger('click');
     };
-    
+    function third(){
+        $("#demo").empty();
+        var normalMainarray = JSON.parse(localStorage.getItem('testObject'));  
+        if(normalMainarray==null || main.length==0){
+            alert("empty")
+            index=0;
+            $("#demo").append('<div myDivIdentifier="' + index + '" style = " width: 250px; height: 180px; position: relative; margin-bottom: 20px;'
+                + 'margin-top: 20px; float :left; margin-left : 12px; background-color : white; border-radius: 8px; z-index: 10;">'
+                + ' <i id="formPopup" class="fa fa-plus-circle"></i></div>')
+        } 
+        else{  
+            
+        $.each(normalMainarray, function (key, value) {
+            
+            createDetailbox(key, value);
+            if(key==main.length-1)
+            {
+                index= (main.length);
+                $("#demo").append('<div myDivIdentifier="' + index + '" style = " width: 250px; height: 180px; position: relative; margin-bottom: 20px;'
+                + 'margin-top: 20px; float :left; margin-left : 12px; background-color : white; border-radius: 8px; z-index: 10;">'
+                + ' <i id="formPopup" class="fa fa-plus-circle"></i></div>')
+            }
+        });
+    }
+    }
     $(document).on("click", ".removebtn", function () {
         findindex = $(this).closest("div").attr("myDivIdentifier");
         main.splice(findindex, 1);
@@ -136,32 +160,15 @@ $(document).ready(function () {
         $('#' + findindex).remove();
         $("#third").trigger('click');
     });
-   
     $(document).on("mouseenter", ".hoverEvent", function (){
         findindex = $(this).closest("div").attr("myDivIdentifier");
         addButonandopacity(findindex);
         
     });
-     
     $(document).on("mouseleave", ".hoverEvent", function (){
         findindex = $(this).closest("div").attr("myDivIdentifier");
         removeButonandopacity(findindex);
     });
-    
-function third(){
-    $("#demo").empty();
-    var normalMainarray = JSON.parse(localStorage.getItem('testObject'));
-    $.each(normalMainarray, function (key, value) {
-        createDetailbox(key, value);
-        if(key==main.length-1)
-        {
-            index= (main.length);
-            $("#demo").append('<div myDivIdentifier="' + index + '" style = " width: 250px; height: 180px; position: relative; margin-bottom: 20px;'
-            + 'margin-top: 20px; float :left; margin-left : 12px; background-color : white; border-radius: 8px; z-index: 10;">'
-            + ' <i id="formPopup" class="fa fa-plus-circle"></i></div>')
-        }
-    });
-}
     $("#third").click(function () {
         third();
     });
@@ -191,8 +198,4 @@ function third(){
             textfieldinFname(l - 1);
         }
     });
-
-
-
-
 });
